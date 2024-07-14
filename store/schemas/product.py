@@ -6,10 +6,10 @@ from store.schemas.base import BaseSchemaMixin, OutSchema
 
 
 class ProductBase(BaseSchemaMixin):
-    name: str = Field(..., description="Product name")
-    quantity: int = Field(..., description="Product quantity")
-    price: Decimal = Field(..., description="Product price")
-    status: bool = Field(..., description="Product status")
+    name: str = Field(..., description="Nome do produto")
+    quantity: int = Field(..., description="Quantidade do produto")
+    price: Decimal = Field(..., description="Preço do produto")
+    status: bool = Field(..., description="Status do produto")
 
 
 class ProductIn(ProductBase, BaseSchemaMixin):
@@ -28,9 +28,9 @@ Decimal_ = Annotated[Decimal, AfterValidator(convert_decimal_128)]
 
 
 class ProductUpdate(BaseSchemaMixin):
-    quantity: Optional[int] = Field(None, description="Product quantity")
-    price: Optional[Decimal_] = Field(None, description="Product price")
-    status: Optional[bool] = Field(None, description="Product status")
+    quantity: Optional[int] = Field(None, description="Quantidade do produto")
+    price: Optional[Decimal_] = Field(None, description="Preço do produto")
+    status: Optional[bool] = Field(None, description="Status do produto")
 
 
 class ProductUpdateOut(ProductOut):
